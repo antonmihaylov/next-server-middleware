@@ -55,3 +55,4 @@ export const GET = withMiddlewares(
 ## Example middlewares
 
 - Error handling: [src/withErrorHandling.ts](src/withErrorHandling.ts)
+- Auth: [examples/withAuth.ts](examples/withAuth.ts)

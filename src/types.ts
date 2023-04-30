@@ -1,13 +1,19 @@
 import type { NextRequest, NextResponse } from "next/server";
 
+export type RequestData = Record<string, unknown>;
+
 export type RequestHandler<
-  T extends NextRequest,
+  T extends NextRequest = NextRequest,
   TParams = Record<string, unknown>
 > = (request: T, params: TParams) => Promise<NextResponse>;
 
 export type NextHandler = () => Promise<NextResponse>;
 
 export type Middleware<
-  T extends NextRequest,
+  TExtraData extends RequestData = RequestData,
   TParams = Record<string, unknown>
-> = (request: T, next: NextHandler, params: TParams) => Promise<NextResponse>;
+> = (
+  request: NextRequest & Partial<TExtraData>,
+  next: NextHandler,
+  params: TParams
+) => Promise<NextResponse>;

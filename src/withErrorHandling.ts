@@ -1,4 +1,3 @@
-import type { NextRequest } from "next/server";
 import { NextResponse } from "next/server";
 
 import type { Middleware } from "./types";
@@ -20,7 +19,7 @@ export const withErrorHandling =
   ({
     errorFactory = defaultErrorFactory,
     errorStatus = 500,
-  }: WithErrorHandlingOptions = {}): Middleware<NextRequest> =>
+  }: WithErrorHandlingOptions = {}): Middleware =>
   async (request, next) => {
     try {
       return await next();
