@@ -1,0 +1,18 @@
+{
+  "name": "next-server-middleware",
+  "version": "1.0.0",
+  "description": "A simple type-safe express-like middleware for Next.js api routes using app directory and next/server",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc"
+  },
+  "peerDependencies": {
+    "next": ">13"
+  },
+  "devDependencies": {
+    "typescript": "^5.0.4",
+    "next": "^13.3.2"
+  },
+  "author": "anton@antomic.net",
+  "license": "MIT"
+}
