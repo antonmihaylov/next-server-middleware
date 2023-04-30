@@ -1,25 +1,17 @@
-import { NextResponse } from "next/server";
+import type { NextResponse } from "next/server";
 
 import type { Middleware } from "./types";
 
 export interface WithErrorHandlingOptions {
-  errorFactory?: (
+  errorFactory: (
     error: unknown,
     options: Omit<WithErrorHandlingOptions, "errorFactory">
   ) => NextResponse;
   errorStatus?: number;
 }
 
-const defaultErrorFactory = (
-  error: unknown,
-  { errorStatus = 500 }: Omit<WithErrorHandlingOptions, "errorFactory"> = {}
-) => NextResponse.json(error, { status: errorStatus });
-
 export const withErrorHandling =
-  ({
-    errorFactory = defaultErrorFactory,
-    errorStatus = 500,
-  }: WithErrorHandlingOptions = {}): Middleware =>
+  ({ errorFactory, errorStatus = 500 }: WithErrorHandlingOptions): Middleware =>
   async (request, next) => {
     try {
       return await next();
