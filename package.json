@@ -24,7 +24,7 @@
     "publish": "npm run build && npm publish --access public"
   },
   "peerDependencies": {
-    "next": ">13"
+    "next": ">=13"
   },
   "devDependencies": {
     "eslint": "^8.39.0",
