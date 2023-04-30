@@ -12,6 +12,11 @@
   "bugs": {
     "url": "https://github.com/antonmihaylov/next-server-middleware/issues"
   },
+  "keywords": [
+    "next.js",
+    "middleware",
+    "api-routes"
+  ],
   "readme": "README.md",
   "homepage": "https://github.com/antonmihaylov/next-server-middleware",
   "scripts": {
