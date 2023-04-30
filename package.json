@@ -1,6 +1,6 @@
 {
   "name": "next-server-middleware",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "A simple type-safe express-like middleware for Next.js api routes using app directory and next/server",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
