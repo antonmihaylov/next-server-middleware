@@ -20,7 +20,7 @@ export const withErrorHandling =
   ({
     errorFactory = defaultErrorFactory,
     errorStatus = 500,
-  }: WithErrorHandlingOptions = {}): Middleware<NextRequest, NextRequest> =>
+  }: WithErrorHandlingOptions = {}): Middleware<NextRequest> =>
   async (request, next) => {
     try {
       return await next();
