@@ -10,6 +10,15 @@ export interface WithErrorHandlingOptions {
   errorStatus?: number;
 }
 
+// Importing NextResponse from next/server causes the app to crash
+export const makeDefaultErrorFactory =
+  ({ ResponseObj }: { ResponseObj: typeof NextResponse }) =>
+  (
+    error: unknown,
+    { errorStatus = 500 }: Omit<WithErrorHandlingOptions, "errorFactory"> = {}
+  ) =>
+    ResponseObj.json(error, { status: errorStatus });
+
 export const withErrorHandling =
   ({ errorFactory, errorStatus = 500 }: WithErrorHandlingOptions): Middleware =>
   async (request, next) => {
