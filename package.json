@@ -3,8 +3,20 @@
   "version": "1.0.0",
   "description": "A simple type-safe express-like middleware for Next.js api routes using app directory and next/server",
   "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/antonmihaylov/next-server-middleware"
+  },
+  "type": "module",
+  "bugs": {
+    "url": "https://github.com/antonmihaylov/next-server-middleware/issues"
+  },
+  "readme": "README.md",
+  "homepage": "https://github.com/antonmihaylov/next-server-middleware",
   "scripts": {
-    "build": "tsc"
+    "build": "tsc",
+    "publish": "npm run build && npm publish --access public"
   },
   "peerDependencies": {
     "next": ">13"
