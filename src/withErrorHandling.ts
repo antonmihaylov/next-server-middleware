@@ -23,7 +23,7 @@ export const withErrorHandling =
   }: WithErrorHandlingOptions = {}): Middleware<NextRequest, NextRequest> =>
   async (request, next) => {
     try {
-      return await next(request);
+      return await next();
     } catch (e) {
       const endpointName = `${request.method} ${request.nextUrl.pathname}`;
       console.error(`API error: ${endpointName}`, e);
